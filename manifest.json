@@ -1,0 +1,19 @@
+{
+  "name": "Always On WCM",
+  "description": "Always on WCM modes for AEM websites. It does not check if the website is being developed in AEM enviornment but persistently keeps adding query parameters for WCM modes so that the mode can be retained on navigation as well.",
+  "version": "1.0",
+  "background": {
+     "scripts": ["background.js"],
+     "persistent": false
+   },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "browser_action": {
+      "name": "Click to change the icon's color",
+      "default_icon": "icon1.png",
+      "default_popup": "popup.html"
+  },
+  "manifest_version": 2
+}
