@@ -1,13 +1,17 @@
+body {
+  margin: 0px;
+}
+
 .aowcm {
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-    overflow: auto;
-    background-color: lightgrey;
-    padding: 5px;
-  }
-  .aowcm h2 {
-    text-align: center;
-  }
-  
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  overflow: auto;
+  background-color: lightgrey;
+  padding: 5px;
+}
+
+.aowcm h2 {
+  text-align: center;
+}

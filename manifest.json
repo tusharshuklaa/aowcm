@@ -12,8 +12,8 @@
   ],
   "browser_action": {
       "name": "Click to change the icon's color",
-      "default_icon": "res/img/icon1.png",
-      "default_popup": "popup.html"
+      "default_icon": "res/img/red.png",
+      "default_popup": "main.html"
   },
   "manifest_version": 2
 }

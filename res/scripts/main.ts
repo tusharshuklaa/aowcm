@@ -1,5 +1,10 @@
+/// <reference path="../../node_modules/@types/chrome/index.d.ts"/>
 namespace AlwaysOnWcm {
   type ModeType = "disabled" | "edit" | "design" | "none";
+
+  export interface IAoWCMSetter {
+    [keyName: string]: ModeType;
+  }
 
   interface AowcmElems {
     switch?: string;
@@ -9,8 +14,7 @@ namespace AlwaysOnWcm {
   }
 
   export class WCMMode {
-    private wcmModeKey = "always_on_wcm";
-    private chrome: any = this.chrome || {};
+    static wcmModeKey: string = "always_on_wcm";
 
     constructor() {}
 
@@ -18,8 +22,8 @@ namespace AlwaysOnWcm {
 
     get mode(): ModeType {
       if (!this.wcmmode) {
-        return this.chrome.storage.sync.get([this.wcmModeKey], function (res) {
-          this.wcmmode = res[this.wcmModeKey];
+        chrome.storage.sync.get([WCMMode.wcmModeKey], function (res) {
+          this.wcmmode = res[WCMMode.wcmModeKey];
           console.log(`Value is "${ this.wcmmode }"`);
           return this.wcmmode;
         });
@@ -29,9 +33,10 @@ namespace AlwaysOnWcm {
     }
 
     set mode(name: ModeType) {
-      this.chrome.storage.sync.set({
-        wcmModeKey: name
-      }, function () {
+      let setKey: IAoWCMSetter = {
+        [WCMMode.wcmModeKey] : name
+      };
+      chrome.storage.sync.set(setKey, function () {
         this.wcmmode = name;
         console.log(`Value is set to "${ this.wcmmode }"`);
       });
