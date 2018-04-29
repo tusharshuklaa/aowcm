@@ -14,17 +14,21 @@
     <div class="aowcm">
         <h2>Always On WCM</h2>
         <form name="aowcm-form">
-            <div class="aowcm-form-row">
+            <div class="aowcm-form-row aowcm-head">
                 <label for="always-on">WCM Mode Always On?</label>
-                <input type="checkbox" name="always-on">
+                <input type="checkbox" id="aowcm-always-on" name="always-on" value="false">
             </div>
             <div class="aowcm-form-row">
                 <label for="always-disabled">Disabled</label>
-                <input type="radio" name="always-disabled" value="disabled">
+                <input type="radio" id="aowcm-always-disabled" name="always-disabled" value="disabled" disabled="disabled">
             </div>
             <div class="aowcm-form-row">
                 <label for="always-edit">Edit</label>
-                <input type="radio" name="always-edit" value="edit">
+                <input type="radio" id="aowcm-always-edit" name="always-edit" value="edit" disabled="disabled">
+            </div>
+            <div class="aowcm-form-row">
+                <label for="always-edit">Edit</label>
+                <input type="radio" id="aowcm-always-design" name="always-design" value="design" disabled="disabled">
             </div>
         </form>
     </div>
